@@ -29,9 +29,9 @@ func (cm *CommandManager) RegisterCommands() {
 
 	cm.registry["admin"] = admin.AdminCommand{}
 
-	cm.registry["about"] = general.AboutCommand{}
-	cm.registry["gdpr"] = general.GDPRCommand{}
-	cm.registry["invite"] = general.InviteCommand{}
+	//	cm.registry["about"] = general.AboutCommand{}
+	//	cm.registry["gdpr"] = general.GDPRCommand{}
+	//	cm.registry["invite"] = general.InviteCommand{}
 	cm.registry["jumptotop"] = general.JumpToTopCommand{}
 	cm.registry["vote"] = general.VoteCommand{}
 
