@@ -4,6 +4,7 @@ import (
 	"github.com/TicketsBot-cloud/worker/bot/button/handlers"
 	"github.com/TicketsBot-cloud/worker/bot/button/handlers/admindebug/server"
 	"github.com/TicketsBot-cloud/worker/bot/button/handlers/admindebug/server/modals"
+	"github.com/TicketsBot-cloud/worker/bot/button/handlers/tickets/edit"
 	"github.com/TicketsBot-cloud/worker/bot/button/registry"
 	"github.com/TicketsBot-cloud/worker/bot/button/registry/matcher"
 )
@@ -55,6 +56,7 @@ func (m *ComponentInteractionManager) RegisterCommands() {
 		new(handlers.AddSupportHandler),
 		new(handlers.CloseHandler),
 		new(handlers.CloseWithReasonModalHandler),
+		new(handlers.EditCloseReasonModalHandler),
 		new(handlers.ClaimHandler),
 		new(handlers.UnclaimHandler),
 		new(handlers.CloseConfirmHandler),
@@ -85,6 +87,7 @@ func (m *ComponentInteractionManager) RegisterCommands() {
 		new(server.AdminDebugServerPermissionsHandler),
 		new(server.AdminDebugServerTicketPermissionsHandler),
 		new(server.AdminDebugServerUserTicketsHandler),
+		new(edit.EditLabelsButtonHandler),
 	)
 
 	m.selectRegistry = append(m.selectRegistry,
@@ -96,12 +99,14 @@ func (m *ComponentInteractionManager) RegisterCommands() {
 	m.modalRegistry = append(m.modalRegistry,
 		new(handlers.FormHandler),
 		new(handlers.CloseWithReasonSubmitHandler),
+		new(handlers.EditCloseReasonSubmitHandler),
 		new(handlers.ExitSurveySubmitHandler),
 		new(handlers.GDPRModalAllTranscriptsHandler),
 		new(handlers.GDPRModalSpecificTranscriptsHandler),
 		new(handlers.GDPRModalAllMessagesHandler),
 		new(handlers.GDPRModalSpecificMessagesHandler),
 		new(handlers.PremiumKeySubmitHandler),
+		new(edit.LabelChangeSubmitHandler),
 		new(modals.AdminDebugServerPanelSettingsModalHandler),
 		new(modals.AdminDebugServerPermissionsModalSubmitHandler),
 		new(modals.AdminDebugServerTicketPermissionsModalSubmitHandler),
